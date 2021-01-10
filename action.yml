@@ -1,0 +1,12 @@
+name: "Owasp Report Custom Renderer"
+description: "Render OWASP Report with few informations as an overview in pdf"
+inputs:
+  owasp-json-report:
+    description: "The owasp report with the dependencies and their vulnerabilities in the JSON format"
+    required: true
+  outputs:
+    pdf:
+      description: "The pdf containing an overview of vulnerable dependencies"
+  runs:
+    using: "node12"
+    main: "index.js"
