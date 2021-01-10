@@ -1,10 +1,11 @@
 const fs = require("fs");
 const Handlebars = require("handlebars");
+const core = require("@actions/core");
 
 const writeHtmlToFS = (html) => {
   fs.writeFile(`dump_${Date.now()}.html`, html, (err) => {
     err
-      ? console.log(err + " couldn't create html dumpfile on the filesystem")
+      ? core.setFailed(err + " couldn't create html dumpfile on the filesystem")
       : null;
   });
 };

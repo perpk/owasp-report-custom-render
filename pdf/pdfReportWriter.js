@@ -1,5 +1,6 @@
 const { default: HTMLToPDF } = require("convert-html-to-pdf");
 const fs = require("fs");
+const core = require("@actions/core");
 
 const writePdfReport = async (html) => {
   if (!html) {
@@ -13,9 +14,12 @@ const writePdfReport = async (html) => {
   } catch (e) {
     throw e;
   }
+
   fs.writeFile(`./dump_${Date.now()}.pdf`, pdf, (err) => {
-    err ? console.log(err) : null;
+    err ? core.setFailed(err) : null;
   });
+
+  core.setOutput("pdf", pdf);
 };
 
 module.exports = writePdfReport;

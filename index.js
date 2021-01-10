@@ -1,3 +1,4 @@
+const core = require("@actions/core");
 const owaspJsonReportReader = require("./json/owaspJsonReportReader");
 const createHtmlOverview = require("./html/htmlOverviewCreator");
 const writePdfReport = require("./pdf/pdfReportWriter");
@@ -8,4 +9,4 @@ const work = async ([owaspReportJsonFile, dumpHtmlToFS = false]) => {
   writePdfReport(html);
 };
 
-work(process.argv.splice(2));
+work(core.getInput("owasp-json-report"), true);
