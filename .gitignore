@@ -1,0 +1,5 @@
+node_modules
+dump*.*
+.vscode
+.DS_Store
+.git

@@ -1,0 +1,18 @@
+{
+  "name": "pdflib",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test-dev": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "convert-html-to-pdf": "^1.0.1",
+    "handlebars": "^4.7.6"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
