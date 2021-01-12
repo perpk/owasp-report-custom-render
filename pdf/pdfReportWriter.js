@@ -15,11 +15,11 @@ const writePdfReport = async (html) => {
     throw e;
   }
 
-  fs.writeFile(`./dump_${Date.now()}.pdf`, pdf, (err) => {
+  fs.writeFile(`./pdf`, pdf, (err) => {
     err ? core.setFailed(err) : null;
   });
 
-  core.setOutput("pdf", pdf);
+  core.setOutput("pdf", "./pdf");
 };
 
 module.exports = writePdfReport;
