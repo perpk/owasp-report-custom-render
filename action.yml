@@ -9,4 +9,4 @@ outputs:
     description: "The pdf containing an overview of vulnerable dependencies"
 runs:
   using: "node12"
-  main: "dist/index.js"
+  main: "index.js"
