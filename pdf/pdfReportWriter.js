@@ -15,11 +15,9 @@ const writePdfReport = async (html) => {
     throw e;
   }
 
-  fs.writeFile(`./pdf`, pdf, (err) => {
+  fs.writeFile(`./owasp-report-overview.pdf`, pdf, (err) => {
     err ? core.setFailed(err) : null;
   });
-
-  core.setOutput("pdf", "pdf");
 };
 
 module.exports = writePdfReport;
