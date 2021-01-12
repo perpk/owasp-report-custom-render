@@ -149,6 +149,8 @@ const readJsonReportFromFS = async (fsLocation) => {
   if (!fsLocation) {
     throw `readJsonReportFromFS: ${fsLocation} is no valid location on the filesystem`;
   }
+  console.log(fsLocation);
+
   const owaspJsonReport = fs.readFileSync(fsLocation, "utf-8");
   return JSON.parse(owaspJsonReport);
 };
