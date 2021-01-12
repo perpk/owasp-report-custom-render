@@ -44,7 +44,7 @@ const owaspJsonReportReader = __nccwpck_require__(9021);
 const createHtmlOverview = __nccwpck_require__(6741);
 const writePdfReport = __nccwpck_require__(6636);
 
-const work = async ([owaspReportJsonFile, dumpHtmlToFS = false]) => {
+const work = async (owaspReportJsonFile, dumpHtmlToFS = false) => {
   try {
     const owaspReportData = await owaspJsonReportReader(owaspReportJsonFile);
     const html = createHtmlOverview(owaspReportData, dumpHtmlToFS);

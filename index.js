@@ -3,7 +3,7 @@ const owaspJsonReportReader = require("./json/owaspJsonReportReader");
 const createHtmlOverview = require("./html/htmlOverviewCreator");
 const writePdfReport = require("./pdf/pdfReportWriter");
 
-const work = async ([owaspReportJsonFile, dumpHtmlToFS = false]) => {
+const work = async (owaspReportJsonFile, dumpHtmlToFS = false) => {
   try {
     const owaspReportData = await owaspJsonReportReader(owaspReportJsonFile);
     const html = createHtmlOverview(owaspReportData, dumpHtmlToFS);
