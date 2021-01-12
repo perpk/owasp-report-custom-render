@@ -45,9 +45,13 @@ const createHtmlOverview = __nccwpck_require__(6741);
 const writePdfReport = __nccwpck_require__(6636);
 
 const work = async ([owaspReportJsonFile, dumpHtmlToFS = false]) => {
-  const owaspReportData = await owaspJsonReportReader(owaspReportJsonFile);
-  const html = createHtmlOverview(owaspReportData, dumpHtmlToFS);
-  writePdfReport(html);
+  try {
+    const owaspReportData = await owaspJsonReportReader(owaspReportJsonFile);
+    const html = createHtmlOverview(owaspReportData, dumpHtmlToFS);
+    writePdfReport(html);
+  } catch (e) {
+    core.setFailed(e);
+  }
 };
 
 work(core.getInput("owasp-json-report"), true);
