@@ -19,7 +19,7 @@ const writePdfReport = async (html) => {
     err ? core.setFailed(err) : null;
   });
 
-  core.setOutput("pdf", "./pdf");
+  core.setOutput("pdf", "pdf");
 };
 
 module.exports = writePdfReport;
