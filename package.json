@@ -1,5 +1,5 @@
 {
-  "name": "pdflib",
+  "name": "owasp-report-custom-render",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
