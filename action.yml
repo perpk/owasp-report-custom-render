@@ -4,9 +4,6 @@ inputs:
   owasp-json-report:
     description: "The owasp report with the dependencies and their vulnerabilities in the JSON format"
     required: true
-outputs:
-  pdf:
-    description: "The pdf containing an overview of vulnerable dependencies"
 runs:
   using: "node12"
   main: "index.js"
