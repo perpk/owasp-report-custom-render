@@ -13,4 +13,9 @@ const work = async (owaspReportJsonFile, dumpHtmlToFS = false) => {
   }
 };
 
-work(core.getInput("owasp-json-report"), true);
+let input = core.getInput("owasp-json-report");
+if (input) {
+  work(input, true);
+} else {
+  work(process.argv.splice(2)[0], true);
+}

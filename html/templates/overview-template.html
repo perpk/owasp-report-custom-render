@@ -1,48 +1,43 @@
 <html>
   <head>
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600&display=swap");
       :root {
-        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-        text-align: center;
+        margin: 20 0 0 20;
       }
-      table {
-        margin-left: auto;
-        margin-right: auto;
-        width: 80%;
+      h1 {
+        font-family: "Zilla Slab";
+        background-color: black;
+        color: white;
+        display: inline;
       }
-      td {
-        text-align: center;
-        padding: 5px;
-        border: 1px solid darkgray;
+
+      ul {
+        border-bottom: 1px solid rgb(131, 129, 129);
       }
-      th {
-        background-color: darkgray;
+      h3 {
+        font-family: "Zilla Slab";
+        color: rgb(119, 7, 119);
+      }
+      li {
+        list-style-type: none;
+        font-family: "helvetica";
+        margin: 10 0 10 0;
+        color: rgb(83, 83, 83);
       }
     </style>
   </head>
   <body>
     <h1>{{title}}</h1>
-    <table>
-      <tr>
-        <th>Dependency</th>
-        <th>Vulnerabilities</th>
-      </tr>
-      {{#each dependencies}}
-      <tr>
-        <td>{{this.name}}</td>
-        <td>{{this.vulnerabilities.length}}</td>
-      </tr>
-      <tr>
-        <th>Name</th>
-        <th>Severity</th>
-      </tr>
+
+    {{#each dependencies}}
+
+    <h3>{{this.name}} with {{this.vulnerabilities.length}} vulnerabilities</h3>
+    <ul>
       {{#each this.vulnerabilities}}
-      <tr>
-        <td>{{this.name}}</td>
-        <td>{{this.severity}}</td>
-      </tr>
-      {{/each}} {{/each}}
-    </table>
+      <li>{{this.name}} with severity {{this.severity}}</li>
+      {{/each}}
+    </ul>
+    {{/each}}
   </body>
 </html>
